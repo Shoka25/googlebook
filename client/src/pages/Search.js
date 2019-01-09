@@ -23,13 +23,13 @@ componentDidMount() {
 loadBooks = () => {
     API.getBooks()
         .then(res =>
-            this.setState({books: res.data, title:"", author: "", description: ""})
+            this.setState({book: res.data, title:"", author: "", description: ""})
             )
             .catch(err => console.log(err));
 
 };
 
-saveBooks = (title, author, description, image, link) => {
+saveBook = (title, author, description, image, link) => {
     API.saveBook({
         title: title,
         author: author,
@@ -94,7 +94,7 @@ render() {
                         <a href={res.volumeInfo.infoLink} alt ="book link">
                         {res.volumeInfo.title} by {res.volumeInfo.authors[0]}
                         </a>
-                        <SaveBtn onClick={() => this.saveBook(res.VolumeInfo.title, res.volumeInfo.authors, res.volumeInfo.description, res.volumeInfo.imageLinks.thumbnail, res.volumeInfo.infoLink)} />
+                        <SaveBtn onClick={() => this.saveBook(res.volumeInfo.title, res.volumeInfo.authors, res.volumeInfo.description, res.volumeInfo.imageLinks.thumbnail, res.volumeInfo.infoLink)} />
                         </ListItem>
 
                     ))}
