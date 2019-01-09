@@ -12,7 +12,7 @@
 /build
 
 # dotenv environment variables file
-.env
+key.env
 
 # misc
 .DS_Store
@@ -21,8 +21,7 @@
 .env.test.local
 .env.production.local
 
-# dotenv environment variables file
-.env
+
 
 npm-debug.log*
 yarn-debug.log*
